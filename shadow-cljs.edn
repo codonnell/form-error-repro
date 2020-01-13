@@ -1,0 +1,16 @@
+{:deps {:aliases [:dev]}
+ :dev-http {8000 "resources/public"}
+ :source-paths ["src"]
+ :nrepl {:port 9000
+         :middleware [cider.nrepl/cider-middleware
+                      refactor-nrepl.middleware/wrap-refactor]}
+ :builds {:dev {:target     :browser
+                :output-dir "resources/public/js"
+                :asset-path "/js"
+
+                :modules    {:main {:entries [form-error-repro.core]
+                                    :init-fn form-error-repro.core/init}}
+
+                :devtools   {:watch-dir "resources/public"
+                             :after-load form-error-repro.core/refresh
+                             :preloads [com.fulcrologic.fulcro.inspect.preload]}}}}
