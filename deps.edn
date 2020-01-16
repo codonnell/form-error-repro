@@ -1,5 +1,5 @@
 {:paths   ["src" "resources"]
- :deps    {com.fulcrologic/fulcro    {:mvn/version "3.1.4"}
+ :deps    {com.fulcrologic/fulcro    {:local/root "../fulcro"}
            org.clojure/clojurescript {:mvn/version "1.10.597"}}
  :aliases {:dev {:extra-paths ["dev"]
                  :jvm-opts    ["-Dtrace"]
